@@ -1,0 +1,12 @@
+db:
+  build: db/
+  ports:
+    - 3306:3306
+
+wordpress:
+  build: wordpress/
+  links:
+    - db
+  ports:
+    - 8080:80
+
