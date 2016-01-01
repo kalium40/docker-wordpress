@@ -11,3 +11,5 @@ wordpress:
     - db
   ports:
     - 8080:80
+  volumes:
+    - ./theme:/var/www/wordpress/wp-content/themes/custom
