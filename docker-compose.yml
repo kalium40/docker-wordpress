@@ -1,8 +1,6 @@
 db:
   container_name: wordpress-db
   build: db/
-  ports:
-    - 3306:3306
 
 wordpress:
   container_name: wordpress-web
@@ -12,4 +10,5 @@ wordpress:
   ports:
     - 8080:80
   volumes:
+    - ./data:/var/www/wordpress
     - ./theme:/var/www/wordpress/wp-content/themes/custom

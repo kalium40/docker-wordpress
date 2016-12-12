@@ -29,9 +29,6 @@ COPY files/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY files/php-fpm/wordpress.conf /etc/php5/fpm/pool.d/
 
 RUN apt-get install unzip -y
-RUN wget https://ja.wordpress.org/latest-ja.zip -P /var/www && unzip /var/www/latest-ja.zip -d /var/www/
-RUN chown www-data:www-data /var/www/wordpress
-WORKDIR /var/www/wordpress
 
 ADD files/run.sh /run.sh
 RUN chmod +x /run.sh
